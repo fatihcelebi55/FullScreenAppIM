@@ -34,14 +34,14 @@ sap.ui.define([
 				mParameters = {};
 
 			oData.Ponumber = this._oView.getModel("viewModel").getProperty("/PoNumber");
-			oData.Lifnr = this._oView.getModel("viewModel").getProperty("/Lifnr");
-			oData.Waers = this._oView.getModel("viewModel").getProperty("/Waers");
-			oData.Bukrs = this._oView.getModel("viewModel").getProperty("/Bukrs");
+			oData.Lifnr    = this._oView.getModel("viewModel").getProperty("/Lifnr");
+			oData.Waers    = this._oView.getModel("viewModel").getProperty("/Waers");
+			oData.Bukrs    = this._oView.getModel("viewModel").getProperty("/Bukrs");
 
 			mParameters.success = function (oData2, oResponse) {
 				debugger;
 				var oBinding = this._oTable.getBinding("items");
-				oBinding.filter([]);
+				oBinding.filter([]); //Yeniden getEntityset çağrılır.
 				MessageBox.success("Sas başarıyla yaratıldı.");
 			}.bind(this);
 			mParameters.error = function (oError) {
