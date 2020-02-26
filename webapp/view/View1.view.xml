@@ -1,0 +1,82 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="FullScreenApp.controller.View1">
+	<App id="idAppControl">
+		<pages>
+			<Page title="Satınalma Giriş Sayfası">
+				<content>
+					<VBox direction="Column" id="vbox0" justifyContent="Center" width="100%"  class="sapUiSmallMargin sapUiTinyMarginBeginEnd">
+						<items>
+							<HBox alignContent="Center" alignItems="Center" class="sapUiSmallMargin sapUiTinyMarginBeginEnd">
+								<Label text="Satınalma Numarası:" textAlign="Center" width="auto" />
+								<Input value="{viewModel>/PoNumber}" width="auto" class="sapUiSmallMargin sapUiTinyMarginBeginEnd"/>
+								<Label text="Satıcı No:" textAlign="Center" width="auto"/>
+								<Input value="{viewModel>/Lifnr}" width="auto" class="sapUiSmallMargin sapUiTinyMarginBeginEnd"/>
+								<Label text="Para Birimi:" textAlign="Center" width="auto"/>
+								<Input value="{viewModel>/Waers}" width="auto" class="sapUiSmallMargin sapUiTinyMarginBeginEnd"/>
+								<Label text="Şirket Kodu:" textAlign="Center" width="auto"/>
+								<Input value="{viewModel>/Bukrs}" width="auto" class="sapUiSmallMargin sapUiTinyMarginBeginEnd"/>
+							</HBox>
+							<HBox alignContent="Center" alignItems="Center" class="sapUiSmallMargin sapUiTinyMarginBeginEnd">
+								<Button text="Ekle" width="200px" press="onAddPurchaseOrder"></Button>
+							</HBox>
+						</items>
+					</VBox>
+					<Table id="table0" items="{/SatinalmaSiparisiSet}" noDataText="Veri Bulunamadı!">
+						<headerToolbar>
+							<OverflowToolbar>
+								<content>
+									<Title text="Satınalmalar" level="H2"/>
+									<!--<ToolbarSpacer/>-->
+									<!--<ComboBox id="idPopinLayout" placeholder="Popin layout options" change="onPopinLayoutChanged">-->
+									<!--	<items>-->
+									<!--		<core:Item text="Block" key="Block"/>-->
+									<!--		<core:Item text="Grid Large" key="GridLarge"/>-->
+									<!--		<core:Item text="Grid Small" key="GridSmall"/>-->
+									<!--	</items>-->
+									<!--</ComboBox>-->
+									<!--<Label text="Sticky options:"/>-->
+									<!--<CheckBox text="ColumnHeaders" select="onSelect"/>-->
+									<!--<CheckBox text="HeaderToolbar" select="onSelect"/>-->
+									<!--<CheckBox text="InfoToolbar" select="onSelect"/>-->
+									<!--<ToggleButton id="toggleInfoToolbar" text="Hide/Show InfoToolbar" press="onToggleInfoToolbar"/>-->
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="column0">
+								<header>
+									<Label id="label0" text="Satınalma No"/>
+								</header>
+							</Column>
+							<Column id="column1">
+								<header>
+									<Label id="label11" text="Satıcı No"/>
+								</header>
+							</Column>
+							<Column id="column2">
+								<header>
+									<Label id="label2" text="Para Birimi"/>
+								</header>
+							</Column>
+							<Column id="column3">
+								<header>
+									<Label id="label3" text="Şirket Kodu"/>
+								</header>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem counter="0" id="item1">
+								<cells>
+									<Text id="text5" maxLines="0" text="{Ponumber}"/>
+									<Text id="text6" maxLines="0" text="{Lifnr}"/>
+									<Text id="text7" maxLines="0" text="{Waers}"/>
+									<Text id="text8" maxLines="0" text="{Bukrs}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
